@@ -1,0 +1,52 @@
+[
+  {
+    "id": "action-first",
+    "task": "Prototype an expense approval where a user tries to approve before completing required fields.",
+    "observe": [
+      "Prerequisites visible at action",
+      "Invalid action leaves state unchanged",
+      "Recovery preserves input",
+      "Valid action updates downstream status"
+    ]
+  },
+  {
+    "id": "scope-budget",
+    "task": "Plan a 90-minute booking prototype and short case study. No deployment or imagery requested.",
+    "observe": [
+      "Bounded complete journey",
+      "No invented publication authority",
+      "Optional work deferred",
+      "Time budget explicit"
+    ]
+  },
+  {
+    "id": "source-discipline",
+    "task": "Write a case study from a supplied brief with an estimated volume and no measured outcomes.",
+    "observe": [
+      "Estimates attributed",
+      "No invented improvement figures",
+      "Assumptions distinct",
+      "Process distinct from product workflow"
+    ]
+  },
+  {
+    "id": "stale-evidence",
+    "task": "Prototype approval with a delayed handoff and a changed record before delivery.",
+    "observe": [
+      "Stale action handled explicitly",
+      "Independent records remain independent",
+      "Visible current status",
+      "Audit history consistent"
+    ]
+  },
+  {
+    "id": "existing-case-study",
+    "task": "Refine a case study for an existing non-AI product without rebuilding its prototype.",
+    "observe": [
+      "Scope preserved",
+      "No forced AI model or state vocabulary",
+      "Copy shorter without lost caveats",
+      "Rendered claims backed by evidence"
+    ]
+  }
+]
