@@ -1,0 +1,2 @@
+const copy=document.querySelector('#copy');
+copy.addEventListener('click',async()=>{try{await navigator.clipboard.writeText(document.querySelector('#command').textContent);document.querySelector('#copy-status').textContent='Copied. Review the commands before running them.';copy.textContent='Copied';}catch{document.querySelector('#copy-status').textContent='Copy unavailable. Select the commands above to copy them manually.';}});

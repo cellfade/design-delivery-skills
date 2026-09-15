@@ -1,5 +1,7 @@
 # Design Delivery Skills
 
+[View the showcase](https://cellfade.github.io/design-delivery-skills/)
+
 **Turn a product brief into a working prototype and a case study people can understand.**
 
 Three portable Agent Skills for designers working with Codex or Claude Code. Frame the problem, demonstrate a complete journey, test recovery, and explain the choices with evidence.
