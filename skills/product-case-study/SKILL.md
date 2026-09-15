@@ -43,3 +43,9 @@ Check the rendered page at the relevant viewport sizes, not source code alone. I
 Trace evaluation criteria to visible evidence. Missing evidence calls for a disclosure or design decision, not an invented outcome. Provide a presentation route that fits the actual session segments, with optional depth reserved for questions.
 
 Publish only within the user's authorization. Verify the final deployed page and sharing metadata when changed. Report specific checks and residual gaps without claiming exhaustive quality or guaranteed reviewer reactions.
+
+## Optional product imagery suite
+
+When imagery serves the requested deliverable, use the available `saas-product-imagery`, `saas-persona-imagery` or `brand-imagery-director` companion. These are optional skills, not implicit permission to install tools or generate extra assets. Begin with verified captures and agreed brand references. Record the source revision; inspect UI fidelity and final-size readability before placement. Do not use polished synthetic images as evidence that a feature works.
+
+For public examples, confirm the intended disclosure and inspect identifying UI details. Prefer approved generalized examples; do not imply earlier projects were produced by a newly created skill.

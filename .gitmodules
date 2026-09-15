@@ -1,0 +1,3 @@
+[submodule "integrations/saas-imagery-suite"]
+	path = integrations/saas-imagery-suite
+	url = https://github.com/cellfade/saas-imagery-suite.git
