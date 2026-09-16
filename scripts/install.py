@@ -21,11 +21,17 @@ def digest(path):
 def install(home, target, update=False, source=ROOT / 'skills'):
     folders = {'codex': home / '.agents/skills', 'claude': home / '.claude/skills'}
     targets = list(folders.values()) if target == 'both' else [folders[target]]
+    if source.is_symlink():
+        raise ValueError(f'Symlink not supported: {source}')
     plans = []
+    found = False
     for dest in targets:
         for skill in sorted(source.iterdir()):
             if not skill.is_dir() or not (skill / 'SKILL.md').is_file():
                 continue
+            if skill.is_symlink():
+                raise ValueError(f'Symlink not supported: {skill}')
+            found = True
             path = dest / skill.name
             desired = digest(skill)
             if path.is_symlink():
@@ -37,6 +43,8 @@ def install(home, target, update=False, source=ROOT / 'skills'):
                 if not marker.exists():
                     raise ValueError(f'Unmanaged existing skill: {path}')
                 previous = json.loads(marker.read_text())
+                if not isinstance(previous, dict):
+                    raise ValueError(f'Invalid management record: {marker}')
                 actual = digest(path)
                 if previous.get('package') != 'design-delivery-skills' or actual != previous.get('files'):
                     raise ValueError(f'Locally changed or unrecognized skill: {path}')
@@ -45,6 +53,8 @@ def install(home, target, update=False, source=ROOT / 'skills'):
                 if not update:
                     raise ValueError(f'Review update, then use --update: {path}')
             plans.append((skill, path, desired))
+    if not found:
+        raise ValueError(f'No skills found in {source}')
     # All conflicts are checked before any installation is changed.
     for skill, path, desired in plans:
         path.parent.mkdir(parents=True, exist_ok=True)

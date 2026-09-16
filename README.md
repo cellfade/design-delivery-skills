@@ -36,7 +36,7 @@ Review loops have budgets and stop conditions. This is a documented workflow, no
 
 ## Install locally
 
-Requires Python 3 and Git. Clone this repository, inspect its contents, then run:
+Requires Python 3.9+ and Git. Clone this repository, inspect its contents, then run:
 
 ```sh
 git clone https://github.com/cellfade/design-delivery-skills.git
@@ -63,7 +63,7 @@ Workflow: verify prototype → capture accurate UI → agree art direction → g
 
 ## Example directions
 
-Earlier product design work informed these practices. Public examples will use approved, generalized visuals. No client screenshots, company names, logos or identifying data are bundled as showcase assets. No claim is made that this new release generated the earlier projects.
+Earlier product design work informed these practices. The showcase uses approved, generalized visual adaptations. Original screenshots are excluded; generated interface details are illustrative, not functional evidence. See [asset provenance](site/assets/README.md). No claim is made that this new release generated the earlier projects.
 
 ## Improve it with evidence
 
@@ -76,4 +76,10 @@ Use the [learning protocol](docs/learning.md) to capture an observed failure, ad
 
 ## License
 
-MIT for this repository's original skills, documentation and scripts. Referenced projects and third-party content retain their own terms.
+MIT for this repository's original skills, documentation, scripts and generated showcase assets. Referenced projects and third-party content retain their own terms.
+
+## Checks and support
+
+Run `python3 scripts/check_package.py` and `python3 -m unittest discover -s tests -v`. CI repeats these on Linux and macOS with Python 3.9 and 3.13. See [release checks and limitations](docs/release-readiness.md).
+
+Report reproducible issues through GitHub Issues without private project data. To remove a core skill, delete only its named folder under `~/.agents/skills/` or `~/.claude/skills/`. Backups of updated managed skills are under each host’s `design-delivery-backups` directory; copy a chosen backup back into its original skill location to roll back. The optional imagery suite has a separate installer and lifecycle.

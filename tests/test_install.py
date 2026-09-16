@@ -38,4 +38,20 @@ class InstallTests(unittest.TestCase):
         p.symlink_to(self.src/'example',target_is_directory=True)
         with self.assertRaises(ValueError):m.install(self.home,'codex',source=self.src)
 
+    def test_invalid_marker_preserves_install(self):
+        m.install(self.home,'codex',source=self.src)
+        folder=self.home/'.agents/skills/example'
+        (folder/m.MARKER).write_text('[]')
+        with self.assertRaises(ValueError):m.install(self.home,'codex',True,source=self.src)
+        self.assertEqual((folder/'SKILL.md').read_text(),'original')
+    def test_source_symlink_refused(self):
+        linked=self.root/'linked';linked.mkdir()
+        (linked/'example').symlink_to(self.src/'example',target_is_directory=True)
+        with self.assertRaises(ValueError):m.install(self.home,'both',source=linked)
+        self.assertFalse(self.home.exists())
+    def test_empty_source_refused(self):
+        empty=self.root/'empty';empty.mkdir()
+        with self.assertRaises(ValueError):m.install(self.home,'both',source=empty)
+        self.assertFalse(self.home.exists())
+
 if __name__=='__main__':unittest.main()
